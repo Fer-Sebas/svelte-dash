@@ -1,265 +1,367 @@
 :root{
 
-    scroll-behavior: smooth;
-    color: var(--mainColor-B);
+  scroll-behavior: smooth;
+  color: var(--color-gray-100);
     
-    --animation-time: all .15s ease-in-out; 
-  
-    --mainColor-A: hsl(0, 0%, 100%, 100%);
-    --mainColor-B: hsl(0, 0%, 100%, 64%);
-    --mainColor-C: hsl(0, 0%, 100%, 14%);
-    --mainColor-D: hsl(0, 0%, 100%, 4%);
-  
-    --altColor-0: hsl(210, 50%, 1%, 100%);
-    --altColor-A: hsl(210, 50%, 1%, 100%);
-    --altColor-B: hsl(0, 0%, 7%, 54%);
-    --altColor-C: hsl(0, 0%, 7%, 14%);  
-  
-    --statusPositiveColor: hsl(120, 93%, 63%, 100%); 
-  
-    --statusNegativeColor: hsl(359, 86%, 52%, 100%); 
-  
-  }
-  <link rel="stylesheet" href="https://use.typekit.net/upm6jow.css">
-  @font-face {
-    font-family: Neue Haas Grotesk;
-    src: url(./fonts/NHG-55.ttf);
-    font-weight: 500;
-  }
-  
-  @font-face {
-    font-family: Neue Haas Grotesk;
-    src: url(./fonts/NHG-65.ttf);
-    font-weight: 600;
-  }
-  
-  @font-face {
-    font-family: Neue Haas Grotesk;
-    src: url(./fonts/NHG-75.ttf);
-    font-weight: 700;
-  }
-  
-  @font-face {
-    font-family: Geogrotesque;
-    src: url(./fonts/GeogrotesqueReg.otf);
-    font-weight: 400;
-  }
-  
-  @font-face {
-    font-family: Geogrotesque;
-    src: url(./fonts/GeogrotesqueMed.otf);
-    font-weight: 500;
-  }
-  
-  @font-face {
-    font-family: Geogrotesque;
-    src: url(./fonts/GeogrotesqueBld.otf);
-    font-weight: 700;
-  }
-  
-  *, *::before, *::after { box-sizing: border-box; border: none; }
-  
-  ul[class], ol[class] { padding: 0; list-style: none; } 
-  
-  body, h1, h2, h3, h4, h5, h6, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd { margin: 0 }
-  
-  img{ max-width: 100%; display: block; }
-  
-  
-  body{
-    padding: 32px 32px 105px 32px;
-    text-rendering: optimizeLegibility;
-    background-color: var(--altColor-A);
-  }
-  
-  body::-webkit-scrollbar { width: 8px }
-  body::-webkit-scrollbar-thumb { background: var(--altColor-C) }
-  
-  [contenteditable] { outline: none; }
-  
-  header{
-    position: fixed; top: 0; left: 0;
-    padding: 16px 32px 0px 32px;
-    width: 100%;  
-    background-color: var(--altColor-A);
-    font-family: 'Geogrotesque', sans-serif;
-    font-weight: 400; font-size: 12px; line-height: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  header > div:first-child {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(0, auto);
-    justify-content: space-between;
-    margin-bottom: 8px;
-  }
+  --animation-time: all .15s ease-in-out; 
 
-  section{
-    max-width: 75ch;
-  }
-  
-  footer{
-    position: fixed; bottom: 0; left: 0;
-    padding: 0 32px 0 32px;
-    width: 100%;
-    background-color: var(--altColor-A);
-  }
-  
-  nav ul{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(0, auto);
-    justify-content: space-between;
-  }
-  
-  ul{
-    list-style: none;
-    margin: 0; padding: 0;
-    text-indent: 0;
-    color: var(--mainColor-A);
-    font-family: 'Geogrotesque', sans-serif; 
-    font-weight: 400; font-size: 16px;
-  }
-  
-  nav ul li{
-    position: relative; display: block; padding-bottom: 16px;
-    font-size: 12px; line-height: 16px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px;
-    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
-  }
-  
-  li::before {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background-color: var(--mainColor-A);
-    transform-origin: bottom center;
-    transform: scale(0, 1);
-    transition: color 0.1s,transform 0.2s ease-out;
-  }
-  
-  nav ul li:active::before {
-    background-color: var(--mainColor-A);
-  }
-  nav ul li:hover::before, nav ul li:focus::before {
-    transform-origin: bottom center;
-    transform: scale(1, 1);
-  }
-  
-  nav ul li.active::before {
-    transform: scale(1, 1);
-    transition: color 0.1s,transform 0.2s ease-out;
-  }
-  
-  
-  /* ---------------------------- Text Elements ---------------------------- */
-  
-  h1 {
-    font-family: 'Neue Haas Grotesk', sans-serif;
-    margin-bottom: 16px; 
-    font-weight: 700; font-size: 36px; line-height: 48px;
-    letter-spacing: 0.015em;
-    color: var(--mainColor-A);
-  }
-  
-  h2 {
-    font-family: 'Neue Haas Grotesk', sans-serif;
-    margin-bottom: 16px;
-    font-weight: 700; font-size: 24px; line-height: 24px;
-    letter-spacing: 0.06em;
-    color: var(--mainColor-A);
-  }
-  
-  h3{
-    font-family: 'Neue Haas Grotesk', sans-serif;
-    margin-bottom: 8px;
-    font-weight: 700; font-size: 16px; line-height: 16px;
-    letter-spacing: 0.06em;
-    color: var(--mainColor-A);
-  }
-  
-  h1 .alt, h2 .alt, h3 .alt {
-    color: var(--mainColor-B);
-  }
-  
-  a{
-    font-family: 'Geogrotesque', sans-serif;
-    font-weight: 700; text-decoration: none;
-    color: inherit;
-  }
-  
-  p{
-    font-family: 'Geogrotesque', sans-serif;
-    margin-bottom: 16px;
-    font-weight: 400; font-size: 14px; line-height: 16px;
-    letter-spacing: 0.5px;
-    color: var(--mainColor-B);
-  }
-  
-  label{
-    font-family: 'Geogrotesque', sans-serif;
-    margin-bottom: 8px;
-    font-weight: 500; font-size: 12px; line-height: 16px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-  
-  b.link { cursor: pointer; }
-  
-  .positive{ color: var(--statusPositiveColor) }
-  .negative{ color: var(--statusNegativeColor) }
-  
-  
-  /* ---------------------------- Input Elements ---------------------------- */
-  
-  input, textarea, select{
-    display: block;
-    transition: 300ms ease all;
-    margin: 4px 0 16px 0; border: 1px solid var(--mainColor-D); width: 100%; border-radius: 1px; padding: 6px 10px 4px 10px; outline-color: var(--mainColor-D);
-    background: var(--mainColor-D);
-    font-family: 'Geogrotesque', sans-serif; font-weight: 400; font-size: 14px; line-height: 16px;
-    color: var(--mainColor-A);
-  }
-  
-  select option { background-color: #343640 }
-  input[type=password]{ letter-spacing: 0.3em }
-  textarea{ resize: none }
-  
-  button{
-    display: block;
-    margin-bottom: 12px; border: none; border-radius: 1px; padding: 8px 32px;border: var(--mainColor-A) solid 2px;
-    background-color: var(--mainColor-A); cursor: pointer;
-    transition: var(--animation-time);
-    font-weight: 500; font-size: 16px; line-height: 18px; font-family: 'Geogrotesque', sans-serif; text-transform: uppercase;
-  }
-  
-  button:hover{ background-color: transparent; border: var(--mainColor-A) solid 2px; color: var(--mainColor-A);
-    transition: var(--animation-time);
+  /* Core Colors*/
+  --color-gray-0: #FFFFFF;
+  --color-gray-100: #EBEBEB;
+  --color-gray-200: #CBCBCB;
+  --color-gray-300: #B0B0B0;
+  --color-gray-400: #969696;
+  --color-gray-500: #7D7D7D;
+  --color-gray-600: #646464;
+  --color-gray-700: #4D4D4D;
+  --color-gray-800: #373636;
+  --color-gray-900: #242323;
+  --color-gray-1000: #010203;
 
+  /* Core Font*/
+  --font-family-geogrotesque: 'Geogrotesque', sans-serif;
+  --font-family-neueHassGrostesk: 'Neue Haas Grotesk', sans-serif;
+
+  --font-weight-light: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-xs: 12px;
+  --font-size-s: 16px;
+  --font-size-m: 24px;
+  --font-size-l: 36px;
+
+  /* Core Spacing*/
+  --padding-horizontal-xs: 4px;
+
+  --padding-vertical-xs: 2px;
+
+  /* Core Border*/
+  --radius-xs: 4px;
+
+
+  /* Semantic */
+  --color-guiLayer-base: var(--color-gray-1000);
+  --color-guiLayer-1: var(--color-gray-900);
+  --color-guiLayer-2: var(--color-gray-800);
+
+
+  /* Scoped */
+  --badge-padding: var(--padding-vertical-xs) var(--padding-horizontal-xs);
+  --badge-radius: var(--radius-xs);
+  --badge-background: var(--color-gray-800);
+  --badge-label: var(--font-weight-light) var(--font-size-xs)/1 var(--font-family-geogrotesque);
+  
+}
+
+@font-face {
+  font-family: Neue Haas Grotesk;
+  src: url(./fonts/NHG-55.ttf);
+  font-weight: 500;
+}
+  
+@font-face {
+  font-family: Neue Haas Grotesk;
+  src: url(./fonts/NHG-65.ttf);
+  font-weight: 600;
+}
+  
+@font-face {
+  font-family: Neue Haas Grotesk;
+  src: url(./fonts/NHG-75.ttf);
+  font-weight: 700;
+}
+  
+@font-face {
+  font-family: Geogrotesque;
+  src: url(./fonts/GeogrotesqueReg.otf);
+  font-weight: 400;
+}
+  
+@font-face {
+  font-family: Geogrotesque;
+  src: url(./fonts/GeogrotesqueMed.otf);
+  font-weight: 500;
+}
+  
+@font-face {
+  font-family: Geogrotesque;
+  src: url(./fonts/GeogrotesqueBld.otf);
+  font-weight: 700;
+}
+  
+*, *::before, *::after { box-sizing: border-box; border: none; }
+  
+ul[class], ol[class] { padding: 0; list-style: none; } 
+  
+body, h1, h2, h3, h4, h5, h6, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd { margin: 0 }
+  
+img{ max-width: 100%; display: block; }
+  
+/* ---------------------------- Input Elements ---------------------------- */
+  
+input, textarea, select{
+  display: block;
+  transition: 300ms ease all;
+  margin: 4px 0 16px 0; border: 1px solid var(--mainColor-D); width: 100%; border-radius: 1px; padding: 6px 10px 4px 10px; outline-color: var(--mainColor-D);
+  background: var(--mainColor-D);
+  font-family: 'Geogrotesque', sans-serif; font-weight: 400; font-size: 14px; line-height: 16px;
+  color: var(--mainColor-A);
+}
+  
+select option { background-color: #343640 }
+input[type=password]{ letter-spacing: 0.3em }
+textarea{ resize: none }
+  
+button{
+  display: block;
+  margin-bottom: 12px; border: none; border-radius: 1px; padding: 8px 32px;border: var(--mainColor-A) solid 2px;
+  background-color: var(--mainColor-A); cursor: pointer;
+  transition: var(--animation-time);
+  font-weight: 500; font-size: 16px; line-height: 18px; font-family: 'Geogrotesque', sans-serif; text-transform: uppercase;
+}
+  
+button:hover{ 
+  background-color: transparent; 
+  border: var(--mainColor-A) solid 2px; 
+  color: var(--mainColor-A);
+  transition: var(--animation-time);
 } 
   
-  button.icon{
-    display: grid; align-items: center; justify-content: center;
-    margin: 0 auto; border: solid 1px var(--altColor-C); border-radius: 4px; padding: 0; width: 24px; height: 24px;
-    background-color: var(--altColor-C); 
+button.icon{
+  display: grid; align-items: center; justify-content: center;
+  margin: 0 auto; border: solid 1px var(--altColor-C); border-radius: 4px; padding: 0; width: 24px; height: 24px;
+  background-color: var(--altColor-C); 
+  transition: var(--animation-time);
+}
+  
+button.icon path{ fill: white }
+  
+button.icon:hover{
+  background-color: var(--altColor-B);      
+  transition: var(--animation-time);
+}
+  
+.fieldGroup{ text-align: left }
+  
+/* ---------------------------- Information Components ---------------------------- */ 
+
+h1 {
+  font-family: var(--font-family-neueHassGrostesk);
+  margin-bottom: 16px; 
+  font-weight: 700; font-size: 36px; line-height: 48px;
+  letter-spacing: 0.015em;
+  color: var(--color-gray-100);
+}
+  
+h2 {
+  font-family: var(--font-family-neueHassGrostesk);
+  margin-bottom: 16px;
+  font-weight: 700; font-size: 24px; line-height: 24px;
+  letter-spacing: 0.06em;
+  color: var(--color-gray-100);
+}
+  
+h3{
+  font-family: var(--font-family-neueHassGrostesk);
+  margin-bottom: 8px;
+  font-weight: 700; font-size: 16px; line-height: 16px;
+  letter-spacing: 0.06em;
+  color: var(--color-gray-100);
+}
+  
+p{
+  font-family: 'Geogrotesque', sans-serif;
+  margin-bottom: 16px;
+  font-weight: 400; font-size: var(--font-size-xs); line-height: 16px;
+  letter-spacing: 0.5px;
+  color: var(--color-gray-100);
+  max-width: 75ch;
+}
+  
+label{
+  font-family: 'Geogrotesque', sans-serif;
+  margin-bottom: 8px;
+  font-weight: 500; font-size: var(--font-size-xs); line-height: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+  
+b.link { cursor: pointer; }
+
+.tally{
+  padding: var(--badge-padding);
+  border-radius: var(--badge-radius);
+  background-color: var(--badge-background);
+  font: var(--badge-label);
+  height: fit-content;
+}
+
+.divider{
+  height: 1px;
+  width: 100%;
+  margin-bottom: 16px;
+  background-color: var(--mainColor-B);
+}
+
+/* ---------------------------- Container Components ---------------------------- */ 
+
+body{
+  padding: 32px 32px 105px 32px;
+  text-rendering: optimizeLegibility;
+  background-color: var(--color-guiLayer-base);
+}
+  
+body::-webkit-scrollbar { width: 8px }
+body::-webkit-scrollbar-thumb { background: var(--color-gray-900) }
+
+header{
+  position: fixed; top: 0; left: 0;
+  padding: 16px 32px 0px 32px;
+  width: 100%;  
+  background-color: var(--color-guiLayer-base);
+  font-family: 'Geogrotesque', sans-serif;
+  font-weight: 400; font-size: 12px; line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+  
+header > div:first-child {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, auto);
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+section, article{
+  max-width: 75ch;
+  margin: 68px auto;
+}
+  
+footer{
+  position: fixed; bottom: 0; left: 0;
+  padding: 0 32px 0 32px;
+  width: 100%;
+  background-color: var(--color-guiLayer-base));
+}
+
+.dialog{
+  max-width: 280px;
+}
+
+.card {
+  display: grid; grid-auto-flow: row; row-gap: 16px;
+  margin-bottom: 12px; border-radius: 2px; padding: 16px 24px 8px;
+  background-color: var(--color-guiLayer-1);
+  text-align: left; overflow-wrap: break-word; 
+  transition: var(--animation-time);
+}
+  
+.card:hover, card:focus {
+  outline: solid var(--statusPositiveColor);
+  transition: var(--animation-time);
+}
+  
+  .card.plant-index {
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .card.plant-index:hover{
+    color: var(--mainColor-A);
     transition: var(--animation-time);
   }
   
-  button.icon path{ fill: white }
-  
-  button.icon:hover{
-    background-color: var(--altColor-B);      
-        transition: var(--animation-time);
+  .card.plant-index > p{
+    margin-bottom: 8px;
   }
   
-  .fieldGroup{ text-align: left }
+  .card.plant-index > p:nth-child(2){
+    font-weight: 500;
+  }
+
+.toolbar {
+  display: grid;  
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, auto);
+  justify-content: start;
+  align-items: baseline;
+  column-gap: 16px;
+  color: var(--mainColor-A);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+    
+  .toolbar > a { font-weight: 500 !important;}
+
+/* ---------------------------- Navigation Components ---------------------------- */ 
+
+a{
+  font-family: 'Geogrotesque', sans-serif;
+  font-weight: 700; text-decoration: none;
+  color: inherit;
+}
+
+nav ul{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, auto);
+  justify-content: space-between;
+}
   
-  /* ---------------------------- Custom Elements ---------------------------- */ 
+ul{
+  list-style: none;
+  margin: 0; padding: 0;
+  text-indent: 0;
+  color: var(--mainColor-A);
+  font-family: 'Geogrotesque', sans-serif; 
+  font-weight: 400; font-size: 16px;
+}
+  
+nav ul li{
+  position: relative; display: block; padding-bottom: 16px;
+  font-size: 12px; line-height: 16px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px;
+  transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+}
+  
+li::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background-color: var(--mainColor-A);
+  transform-origin: bottom center;
+  transform: scale(0, 1);
+  transition: color 0.1s,transform 0.2s ease-out;
+}
+  
+nav ul li:active::before {
+  background-color: var(--mainColor-A);
+}
+
+nav ul li:hover::before, nav ul li:focus::before {
+  transform-origin: bottom center;
+  transform: scale(1, 1);
+}
+  
+nav ul li.active::before {
+  transform: scale(1, 1);
+  transition: color 0.1s,transform 0.2s ease-out;
+}
+
+/* ---------------------------- Unsorted Components ---------------------------- */ 
+
   .loading:after{
     display: inline-block;
     animation: ellipsis steps(1,end) 1600ms infinite;
@@ -274,68 +376,7 @@
     100%  { content: ''; }
   }
   
-  .toolbar {
-    display: grid;  
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(0, auto);
-    justify-content: start;
-    align-items: baseline;
-    column-gap: 16px;
-    color: var(--mainColor-A);
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 12px;
-    letter-spacing: 1px;
-    margin-bottom: 16px;
-  }
   
-  .toolbar > a { font-weight: 500 !important;}
-  
-  .divider{
-    height: 1px;
-    width: 100%;
-    margin-bottom: 16px;
-    background-color: var(--mainColor-B);
-  }
-
-  .dialog{
-    max-width: 280px;
-  }
-  
-  .card {
-    display: grid; grid-auto-flow: row; row-gap: 16px;
-    margin-bottom: 12px; border-radius: 2px; padding: 16px 24px 8px;
-    /* width: max(420px); */ 
-    background-color: var(--mainColor-D);
-    text-align: left; overflow-wrap: break-word; 
-    transition: var(--animation-time);
-  }
-  
-  .card:hover, card:focus {
-    outline: solid var(--statusPositiveColor);
-    transition: var(--animation-time);
-  }
-  
-    .card.plant-index {
-      text-transform: uppercase;
-      display: grid;
-      grid-template-columns: auto auto;
-      justify-content: space-between;
-      cursor: pointer;
-    }
-  
-    .card.plant-index:hover{
-      color: var(--mainColor-A);
-      transition: var(--animation-time);
-    }
-  
-    .card.plant-index > p{
-      margin-bottom: 8px;
-    }
-  
-    .card.plant-index > p:nth-child(2){
-      font-weight: 500;
-    }
   
     .overlay-background{
       top: 0;
