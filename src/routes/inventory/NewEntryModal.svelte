@@ -1,6 +1,6 @@
 <script lang="ts">
-	import InputNumber from "../../components/InputNumber.svelte";
-	import InputText from "../../components/InputText.svelte";
+	import InputNumber from "../../components/controllers/InputNumber.svelte";
+	import InputText from "../../components/controllers/InputText.svelte";
 
     export let item = {
         category: '',

@@ -1,8 +1,8 @@
 <script>
  
     import Dialog from "../../components/containers/Dialog.svelte";
-	import InputPassword from "../../components/InputPassword.svelte";
-	import InputText from "../../components/InputText.svelte";
+	import InputPassword from "../../components/controllers/InputPassword.svelte";
+	import InputText from "../../components/controlers/InputText.svelte";
 
     export let credentials = { username: '', password: '' }
 
